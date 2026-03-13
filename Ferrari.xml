@@ -5,6 +5,10 @@
   <remote name="gitlab"
           fetch="https://gitlab.com/" />
 
+  <!-- Remove ROM default projects we want to replace -->
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_agm" />
+  <remove-project name="LineageOS/android_hardware_qcom_display" />
+
   <!-- Device -->
   <project path="device/realme/ferrari"
            name="asmodeus-oos/android_device_realme_ferrari"
@@ -27,6 +31,12 @@
            remote="gitlab"
            revision="lineage-23.2" />
 
+  <!-- Afterlife private keys -->
+  <project path="vendor/afterlife/priv_keys"
+           name="asmodeus-oos/android_vendor_afterlife-priv_keys"
+           remote="github"
+           revision="afterlife" />
+
   <!-- Kernel -->
   <project path="kernel/oneplus/sm8450"
            name="asmodeus-oos/android_kernel_oneplus_sm8450"
@@ -48,5 +58,17 @@
            name="asmodeus-oos/android_hardware_oplus"
            remote="github"
            revision="lineage-23.2" />
+
+  <!-- Replace AGM audio -->
+  <project path="hardware/qcom-caf/sm8450/audio/agm"
+           name="asmodeus-oos/android_vendor_qcom_opensource_agm"
+           remote="github"
+           revision="lineage-23.2-caf-sm8450" />
+
+  <!-- Replace QCOM display -->
+  <project path="hardware/qcom-caf/sm8450/display"
+           name="asmodeus-oos/android_hardware_qcom_display"
+           remote="github"
+           revision="lineage-23.2-caf-sm8450" />
 
 </manifest>
