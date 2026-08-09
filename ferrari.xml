@@ -72,4 +72,12 @@
            remote="gitlab-asmodeus"
            revision="lineage-23.2" />
 
+  <!-- ════════════════════════════════════════════════════════════════
+       Signing Keys
+       ════════════════════════════════════════════════════════════════ -->
+  <project path="vendor/lineage-priv/keys"
+           name="android_vendor_lineage-priv_keys"
+           remote="github-asmodeus"
+           revision="master" />
+
 </manifest>
