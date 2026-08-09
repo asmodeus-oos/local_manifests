@@ -1,34 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Local manifest for Realme GT2 Pro (ferrari / RMX3301)
+     Qualcomm SM8450 (Snapdragon 8 Gen 1) — LineageOS 23.3
+
+     Usage:
+       1. Place this file in .repo/local_manifests/ferrari.xml
+          (or clone this repo into .repo/local_manifests/)
+       2. repo sync -c -j$(nproc --all) --force-sync
+       3. bash device/realme/ferrari/patches/apply-patches.sh
+-->
 <manifest>
 
   <!-- Remotes -->
-  <remote name="github"
-          fetch="https://github.com"
+  <remote name="github-asmodeus"
+          fetch="https://github.com/asmodeus-oos"
           revision="lineage-23.3" />
 
-  <remote name="gitlab"
-          fetch="https://gitlab.com"
+  <remote name="gitlab-asmodeus"
+          fetch="https://gitlab.com/asmodeus-oos"
           revision="lineage-23.2" />
 
-  <default revision="lineage-23.3"
-           remote="github"
-           sync-c="true"
-           sync-j="4" />
+  <!-- ════════════════════════════════════════════════════════════════
+       Device Trees
+       ════════════════════════════════════════════════════════════════ -->
+  <project path="device/realme/ferrari"
+           name="android_device_realme_ferrari"
+           remote="github-asmodeus"
+           revision="lineage-23.3" />
 
-  <!-- Device Trees -->
-  <project path="device/realme/ferrari" name="asmodeus-oos/android_device_realme_ferrari" remote="github" revision="lineage-23.3" />
-  <project path="device/oneplus/sm8450-common" name="asmodeus-oos/android_device_oneplus_sm8450-common" remote="github" revision="lineage-23.3" />
+  <project path="device/oneplus/sm8450-common"
+           name="android_device_oneplus_sm8450-common"
+           remote="github-asmodeus"
+           revision="lineage-23.3" />
 
-  <!-- Hardware HALs -->
-  <project path="hardware/oplus" name="asmodeus-oos/android_hardware_oplus" remote="github" revision="lineage-23.3" />
+  <!-- ════════════════════════════════════════════════════════════════
+       Hardware HALs
+       ════════════════════════════════════════════════════════════════ -->
+  <project path="hardware/oplus"
+           name="android_hardware_oplus"
+           remote="github-asmodeus"
+           revision="lineage-23.3" />
 
-  <!-- Kernel Source & Modules -->
-  <project path="kernel/oneplus/sm8450" name="asmodeus-oos/android_kernel_oneplus_sm8450" remote="github" revision="lineage-23.3" />
-  <project path="kernel/oneplus/sm8450-devicetrees" name="asmodeus-oos/android_kernel_oneplus_sm8450-devicetrees" remote="github" revision="lineage-23.3" />
-  <project path="kernel/oneplus/sm8450-modules" name="asmodeus-oos/android_kernel_oneplus_sm8450-modules" remote="github" revision="lineage-23.3" />
+  <!-- ════════════════════════════════════════════════════════════════
+       Kernel Source & Modules (Linux 5.10.260)
+       ════════════════════════════════════════════════════════════════ -->
+  <project path="kernel/oneplus/sm8450"
+           name="android_kernel_oneplus_sm8450"
+           remote="github-asmodeus"
+           revision="lineage-23.3" />
 
-  <!-- Vendor Blobs -->
-  <project path="vendor/realme/ferrari" name="asmodeus-oos/proprietary_vendor_realme_ferrari" remote="gitlab" revision="lineage-23.2" />
-  <project path="vendor/oneplus/sm8450-common" name="asmodeus-oos/proprietary_vendor_oneplus_sm8450-common" remote="gitlab" revision="lineage-23.2" />
+  <project path="kernel/oneplus/sm8450-devicetrees"
+           name="android_kernel_oneplus_sm8450-devicetrees"
+           remote="github-asmodeus"
+           revision="lineage-23.3" />
+
+  <project path="kernel/oneplus/sm8450-modules"
+           name="android_kernel_oneplus_sm8450-modules"
+           remote="github-asmodeus"
+           revision="lineage-23.3" />
+
+  <!-- ════════════════════════════════════════════════════════════════
+       Vendor Blobs (GitLab, lineage-23.2)
+       ════════════════════════════════════════════════════════════════ -->
+  <project path="vendor/realme/ferrari"
+           name="proprietary_vendor_realme_ferrari"
+           remote="gitlab-asmodeus"
+           revision="lineage-23.2" />
+
+  <project path="vendor/oneplus/sm8450-common"
+           name="proprietary_vendor_oneplus_sm8450-common"
+           remote="gitlab-asmodeus"
+           revision="lineage-23.2" />
 
 </manifest>
