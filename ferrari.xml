@@ -13,7 +13,7 @@
   <!-- Remotes -->
   <remote name="github-asmodeus"
           fetch="https://github.com/asmodeus-oos"
-          revision="lineage-23.3" />
+          revision="17.0" />
 
   <remote name="gitlab-asmodeus"
           fetch="https://gitlab.com/asmodeus-oos"
@@ -23,18 +23,18 @@
   <project path="device/realme/ferrari"
            name="android_device_realme_ferrari"
            remote="github-asmodeus"
-           revision="lineage-23.3" />
+           revision="17.0" />
 
   <project path="device/oneplus/sm8450-common"
            name="android_device_oneplus_sm8450-common"
            remote="github-asmodeus"
-           revision="lineage-23.3" />
+           revision="17.0" />
 
   <!-- Hardware HALs -->
   <project path="hardware/oplus"
            name="android_hardware_oplus"
            remote="github-asmodeus"
-           revision="lineage-23.3" />
+           revision="17.0" />
 
   <!-- Oplus Camera -->
   <project path="vendor/oplus/camera"
@@ -46,17 +46,17 @@
   <project path="kernel/oneplus/sm8450"
            name="android_kernel_oneplus_sm8450"
            remote="github-asmodeus"
-           revision="lineage-23.3" />
+           revision="17.0" />
 
   <project path="kernel/oneplus/sm8450-devicetrees"
            name="android_kernel_oneplus_sm8450-devicetrees"
            remote="github-asmodeus"
-           revision="lineage-23.3" />
+           revision="17.0" />
 
   <project path="kernel/oneplus/sm8450-modules"
            name="android_kernel_oneplus_sm8450-modules"
            remote="github-asmodeus"
-           revision="lineage-23.3" />
+           revision="17.0" />
 
   <!-- Vendor Blobs (GitLab, lineage-23.2) -->
   <project path="vendor/realme/ferrari"
