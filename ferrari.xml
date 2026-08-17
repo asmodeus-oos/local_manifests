@@ -19,8 +19,6 @@
           fetch="https://gitlab.com/asmodeus-oos"
           revision="lineage-23.2" />
 
-  <remote name="bubundas17"
-          fetch="https://github.com/bubundas17" />
 
   <!-- Device Trees -->
   <project path="device/realme/ferrari"
@@ -81,17 +79,17 @@
   <!-- Overrides for ROM source HALs -->
   <extend-project path="hardware/qcom-caf/sm8450/display"
                   name="hardware_qcom_display"
-                  remote="bubundas17"
+                  remote="github-asmodeus"
                   revision="ferrari-fixes" />
 
   <extend-project path="hardware/qcom-caf/sm8450/audio/agm"
                   name="android_vendor_qcom_opensource_agm"
-                  remote="bubundas17"
+                  remote="github-asmodeus"
                   revision="ferrari-fixes-sm8450" />
 
   <extend-project path="hardware/qcom-caf/sm8450-6.6/audio/agm"
                   name="android_vendor_qcom_opensource_agm"
-                  remote="bubundas17"
+                  remote="github-asmodeus"
                   revision="ferrari-fixes-sm8450-6.6" />
 
 </manifest>
