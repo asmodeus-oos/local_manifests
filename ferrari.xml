@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
      Local manifest for Realme GT2 Pro (ferrari / RMX3301)
-     Qualcomm SM8450 (Snapdragon 8 Gen 1) - LineageOS 23.3
+     Qualcomm SM8450 (Snapdragon 8 Gen 1) - LineageOS 23.3 / Evolution-X
 
      Usage:
        1. Place this file in .repo/local_manifests/ferrari.xml
@@ -77,19 +77,25 @@
            revision="master" />
 
   <!-- Overrides for ROM source HALs -->
-  <extend-project path="hardware/qcom-caf/sm8450/display"
-                  name="hardware_qcom_display"
-                  remote="github-asmodeus"
-                  revision="ferrari-fixes" />
+  <remove-project name="LineageOS/android_hardware_qcom_display" />
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_agm" />
+  <remove-project name="hardware/qcom-caf/sm8450/display" />
+  <remove-project name="hardware/qcom-caf/sm8450/audio/agm" />
+  <remove-project name="hardware/qcom-caf/sm8450-6.6/audio/agm" />
 
-  <extend-project path="hardware/qcom-caf/sm8450/audio/agm"
-                  name="android_vendor_qcom_opensource_agm"
-                  remote="github-asmodeus"
-                  revision="ferrari-fixes-sm8450" />
+  <project path="hardware/qcom-caf/sm8450/display"
+           name="hardware_qcom_display"
+           remote="github-asmodeus"
+           revision="ferrari-fixes" />
 
-  <extend-project path="hardware/qcom-caf/sm8450-6.6/audio/agm"
-                  name="android_vendor_qcom_opensource_agm"
-                  remote="github-asmodeus"
-                  revision="ferrari-fixes-sm8450-6.6" />
+  <project path="hardware/qcom-caf/sm8450/audio/agm"
+           name="android_vendor_qcom_opensource_agm"
+           remote="github-asmodeus"
+           revision="ferrari-fixes-sm8450" />
+
+  <project path="hardware/qcom-caf/sm8450-6.6/audio/agm"
+           name="android_vendor_qcom_opensource_agm"
+           remote="github-asmodeus"
+           revision="ferrari-fixes-sm8450-6.6" />
 
 </manifest>
