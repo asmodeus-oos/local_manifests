@@ -80,8 +80,24 @@
   <remove-project name="LineageOS/android_hardware_qcom_display" />
   <remove-project name="LineageOS/android_hardware_qcom_media" />
   <remove-project name="LineageOS/android_vendor_qcom_opensource_agm" />
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_arpal-lx" />
+  <remove-project name="LineageOS/android_hardware_qcom_audio-ar" />
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_audioreach-graphservices" />
   <remove-project name="LineageOS/android_vendor_qcom_opensource_display-core" />
   <remove-project name="LineageOS/android_vendor_qcom_opensource_display-intf" />
+
+  <!-- Main sm8450 Audio & Display projects -->
+  <project path="hardware/qcom-caf/sm8450/audio/pal"
+           name="LineageOS/android_vendor_qcom_opensource_arpal-lx"
+           revision="lineage-24.0-caf-sm8450" />
+
+  <project path="hardware/qcom-caf/sm8450/audio/primary-hal"
+           name="LineageOS/android_hardware_qcom_audio-ar"
+           revision="lineage-24.0-caf-sm8450" />
+
+  <project path="hardware/qcom-caf/sm8450/audio/graphservices"
+           name="LineageOS/android_vendor_qcom_opensource_audioreach-graphservices"
+           revision="lineage-24.0-caf-sm8450" />
 
   <project path="hardware/qcom-caf/sm8450/display"
            name="hardware_qcom_display"
