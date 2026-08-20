@@ -59,16 +59,16 @@
            remote="github-asmodeus"
            revision="17.0" />
 
-  <!-- Vendor Blobs (GitLab, lineage-23.2) -->
+  <!-- Vendor Blobs (GitHub) -->
   <project path="vendor/realme/ferrari"
            name="proprietary_vendor_realme_ferrari"
-           remote="gitlab-asmodeus"
-           revision="lineage-23.2" />
+           remote="github-asmodeus"
+           revision="17.0" />
 
   <project path="vendor/oneplus/sm8450-common"
            name="proprietary_vendor_oneplus_sm8450-common"
-           remote="gitlab-asmodeus"
-           revision="lineage-23.2" />
+           remote="github-asmodeus"
+           revision="17.0" />
 
   <!-- Signing Keys -->
   <project path="vendor/lineage-priv/keys"
