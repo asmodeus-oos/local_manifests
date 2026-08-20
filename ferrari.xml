@@ -109,9 +109,4 @@
            remote="github-asmodeus"
            revision="ferrari-fixes-sm8450" />
 
-  <project path="hardware/qcom-caf/sm8450-6.6/audio/agm"
-           name="android_vendor_qcom_opensource_agm"
-           remote="github-asmodeus"
-           revision="ferrari-fixes-sm8450-6.6" />
-
 </manifest>
