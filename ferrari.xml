@@ -8,6 +8,7 @@
        2. repo sync -c -j4
        3. bash device/realme/ferrari/patches/apply-patches.sh
 -->
+
 <manifest>
 
   <!-- Remotes -->
@@ -18,6 +19,10 @@
   <remote name="gitlab-asmodeus"
           fetch="https://gitlab.com/asmodeus-oos"
           revision="lineage-23.2" />
+
+  <remote name="github-bubundas17"
+          fetch="https://github.com/bubundas17"
+          revision="Evolution-X-v12.1-Android-17" />
 
 
   <!-- Device Trees -->
@@ -31,17 +36,20 @@
            remote="github-asmodeus"
            revision="17.0" />
 
+
   <!-- Hardware HALs -->
   <project path="hardware/oplus"
            name="android_hardware_oplus"
            remote="github-asmodeus"
            revision="17.0" />
 
+
   <!-- Oplus Camera -->
   <project path="vendor/oplus/camera"
            name="vendor_oplus_camera"
            remote="github-asmodeus"
            revision="17.0" />
+
 
   <!-- Kernel Source and Modules (Linux 5.10.260) -->
   <project path="kernel/oneplus/sm8450"
@@ -59,16 +67,18 @@
            remote="github-asmodeus"
            revision="17.0" />
 
-  <!-- Vendor Blobs (GitHub) -->
+
+  <!-- Vendor Blobs - Evolution-X v12.1 Android 17 -->
   <project path="vendor/realme/ferrari"
            name="proprietary_vendor_realme_ferrari"
-           remote="github-asmodeus"
-           revision="17.0" />
+           remote="github-bubundas17"
+           revision="Evolution-X-v12.1-Android-17" />
 
   <project path="vendor/oneplus/sm8450-common"
            name="proprietary_vendor_oneplus_sm8450-common"
-           remote="github-asmodeus"
-           revision="17.0" />
+           remote="github-bubundas17"
+           revision="Evolution-X-v12.1-Android-17" />
+
 
   <!-- Signing Keys -->
   <project path="vendor/lineage-priv/keys"
