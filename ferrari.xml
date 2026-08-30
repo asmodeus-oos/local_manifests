@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
      Local manifest for Realme GT2 Pro (ferrari / RMX3301)
-     Qualcomm SM8450 (Snapdragon 8 Gen 1) - LineageOS 23.3 / Evolution-X
+     Qualcomm SM8450 (Snapdragon 8 Gen 1) - Evolution-X (Android 17.0)
 
      Usage:
        1. Place this file in .repo/local_manifests/ferrari.xml
@@ -15,14 +15,6 @@
   <remote name="github-asmodeus"
           fetch="https://github.com/asmodeus-oos"
           revision="17.0" />
-
-  <remote name="gitlab-asmodeus"
-          fetch="https://gitlab.com/asmodeus-oos"
-          revision="lineage-23.2" />
-
-  <remote name="github-bubundas17"
-          fetch="https://github.com/bubundas17"
-          revision="Evolution-X-v12.1-Android-17" />
 
 
   <!-- Device Trees -->
@@ -44,14 +36,7 @@
            revision="17.0" />
 
 
-  <!-- Oplus Camera -->
-  <project path="vendor/oplus/camera"
-           name="vendor_oplus_camera"
-           remote="github-asmodeus"
-           revision="17.0" />
-
-
-  <!-- Kernel Source and Modules (Linux 5.10.260) -->
+  <!-- Kernel Source, Devicetrees and Modules -->
   <project path="kernel/oneplus/sm8450"
            name="android_kernel_oneplus_sm8450"
            remote="github-asmodeus"
@@ -68,16 +53,16 @@
            revision="17.0" />
 
 
-  <!-- Vendor Blobs - Evolution-X v12.1 Android 17 -->
+  <!-- Vendor Blobs -->
   <project path="vendor/realme/ferrari"
            name="proprietary_vendor_realme_ferrari"
-           remote="github-bubundas17"
-           revision="Evolution-X-v12.1-Android-17" />
+           remote="github-asmodeus"
+           revision="17.0" />
 
   <project path="vendor/oneplus/sm8450-common"
            name="proprietary_vendor_oneplus_sm8450-common"
-           remote="github-bubundas17"
-           revision="Evolution-X-v12.1-Android-17" />
+           remote="github-asmodeus"
+           revision="17.0" />
 
 
   <!-- Signing Keys -->
