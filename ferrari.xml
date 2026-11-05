@@ -6,6 +6,10 @@
           fetch="https://github.com/asmodeus-oos"
           revision="17.0" />
 
+  <remote name="gitlab-asmodeus"
+          fetch="https://gitlab.com/asmodeus-oos"
+          revision="17.0" />
+
   <!-- Remove upstream projects to replace with patched forks -->
   <remove-project name="LineageOS/android_hardware_qcom_display" />
   <remove-project name="LineageOS/android_hardware_qcom_audio-ar" />
@@ -92,6 +96,17 @@
   <project path="hardware/qcom-caf/thermal"
            name="android_hardware_qcom_thermal"
            remote="asmodeus"
+           revision="17.0" />
+
+  <!-- Vendor Blobs (GitLab) -->
+  <project path="vendor/realme/ferrari"
+           name="proprietary_vendor_realme_ferrari"
+           remote="gitlab-asmodeus"
+           revision="17.0" />
+
+  <project path="vendor/oneplus/sm8450-common"
+           name="proprietary_vendor_oneplus_sm8450-common"
+           remote="gitlab-asmodeus"
            revision="17.0" />
 
 </manifest>
