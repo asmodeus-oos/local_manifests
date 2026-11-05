@@ -54,43 +54,43 @@
   <project path="hardware/qcom-caf/sm8450/display"
            name="android_hardware_qcom_display"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450" />
+           revision="17.0-caf-sm8450" />
 
   <project path="hardware/qcom-caf/sm8450-6.6/display/hal"
            name="android_hardware_qcom_display"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450-6.6" />
+           revision="17.0-caf-sm8450-6.6" />
 
   <!-- Qualcomm Audio HALs (sm8450 and sm8450-6.6) -->
   <project path="hardware/qcom-caf/sm8450/audio/primary-hal"
            name="android_hardware_qcom_audio-ar"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450" />
+           revision="17.0-caf-sm8450" />
 
   <project path="hardware/qcom-caf/sm8450-6.6/audio/primary-hal"
            name="android_hardware_qcom_audio-ar"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450-6.6" />
+           revision="17.0-caf-sm8450-6.6" />
 
   <project path="hardware/qcom-caf/sm8450/audio/agm"
            name="android_vendor_qcom_opensource_agm"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450" />
+           revision="17.0-caf-sm8450" />
 
   <project path="hardware/qcom-caf/sm8450-6.6/audio/agm"
            name="android_vendor_qcom_opensource_agm"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450-6.6" />
+           revision="17.0-caf-sm8450-6.6" />
 
   <project path="hardware/qcom-caf/sm8450/audio/pal"
            name="android_vendor_qcom_opensource_arpal-lx"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450" />
+           revision="17.0-caf-sm8450" />
 
   <project path="hardware/qcom-caf/sm8450-6.6/audio/pal"
            name="android_vendor_qcom_opensource_arpal-lx"
            remote="asmodeus"
-           revision="lineage-24.0-caf-sm8450-6.6" />
+           revision="17.0-caf-sm8450-6.6" />
 
   <!-- Qualcomm Thermal HAL -->
   <project path="hardware/qcom-caf/thermal"
