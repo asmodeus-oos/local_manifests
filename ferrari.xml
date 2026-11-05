@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-     Local manifest for Realme GT 2 Pro (ferrari / RMX3301)
-     Evolution X 12.3 (Android 17.0)
-
-     Usage:
-       1. Clone this repository into .repo/local_manifests:
-            git clone https://github.com/asmodeus-oos/android_local_manifests.git -b 17.0 .repo/local_manifests
-       2. Sync sources:
-            repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
--->
-
 <manifest>
 
   <!-- Remotes -->
@@ -18,14 +7,6 @@
           revision="17.0" />
 
   <!-- Remove upstream projects to replace with patched forks -->
-  <remove-project name="frameworks_av" />
-  <remove-project name="frameworks_base" />
-  <remove-project name="frameworks_libs_systemui" />
-  <remove-project name="frameworks_native" />
-  <remove-project name="hardware_lineage_compat" />
-  <remove-project name="packages_apps_Evolver" />
-  <remove-project name="packages_apps_Settings" />
-  <remove-project name="vendor_evolution" />
   <remove-project name="LineageOS/android_hardware_qcom_display" />
   <remove-project name="LineageOS/android_hardware_qcom_audio-ar" />
   <remove-project name="LineageOS/android_vendor_qcom_opensource_agm" />
@@ -110,47 +91,6 @@
   <!-- Qualcomm Thermal HAL -->
   <project path="hardware/qcom-caf/thermal"
            name="android_hardware_qcom_thermal"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <!-- Evolution X Patched Sources -->
-  <project path="packages/apps/Evolver"
-           name="android_packages_apps_Evolver"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="packages/apps/Settings"
-           name="android_packages_apps_Settings"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="vendor/lineage"
-           name="android_vendor_evolution"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="hardware/lineage/compat"
-           name="android_hardware_lineage_compat"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="frameworks/base"
-           name="android_frameworks_base"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="frameworks/av"
-           name="android_frameworks_av"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="frameworks/native"
-           name="android_frameworks_native"
-           remote="asmodeus"
-           revision="17.0" />
-
-  <project path="frameworks/libs/systemui"
-           name="android_frameworks_libs_systemui"
            remote="asmodeus"
            revision="17.0" />
 

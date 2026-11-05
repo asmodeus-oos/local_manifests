@@ -1,20 +1,20 @@
-# Realme GT2 Pro (ferrari / RMX3301) — LineageOS 23.3
+# Local Manifests for Realme GT 2 Pro (ferrari / RMX3301) — Evolution X 12.3
 
-Local manifests and build instructions for the Realme GT2 Pro (SM8450 / Snapdragon 8 Gen 1).
+Local manifests and setup instructions for building Evolution X 12.3 (Android 17 / lineage-24.0 base) on Realme GT 2 Pro (SM8450).
 
-## Quick Setup
+## Setup & Build
 
 ```bash
-# 1. Initialize LineageOS 23.3 source
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.3 --git-lfs
+# 1. Initialize Evolution X source tree
+repo init -u https://github.com/Evolution-X/manifest -b cnb --git-lfs
 
-# 2. Clone this manifest repo
-git clone https://github.com/asmodeus-oos/local_manifests.git .repo/local_manifests
+# 2. Clone local manifest into .repo/local_manifests
+git clone https://github.com/asmodeus-oos/local_manifests.git -b 17.0 .repo/local_manifests
 
 # 3. Sync all sources
-repo sync -c -j$(nproc --all) --force-sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
-# 4. Apply device patches (UDFPS fixes, AGM audio, display HAL)
+# 4. Apply device patches to upstream repos
 bash device/realme/ferrari/patches/apply-patches.sh
 
 # 5. Build
@@ -23,38 +23,24 @@ lunch lineage_ferrari-ap4a-userdebug
 mka bacon
 ```
 
-## What patches are applied
+## Repositories Included in Manifest
 
-The `apply-patches.sh` script applies the following patches **idempotently** (safe to run multiple times):
+| Component | Target Path | GitHub Repository | Branch |
+|---|---|---|---|
+| Device Tree (ferrari) | `device/realme/ferrari` | `asmodeus-oos/android_device_realme_ferrari` | `17.0` |
+| Device Common (sm8450) | `device/oneplus/sm8450-common` | `asmodeus-oos/android_device_oneplus_sm8450-common` | `17.0` |
+| Hardware HAL | `hardware/oplus` | `asmodeus-oos/android_hardware_oplus` | `17.0` |
+| Kernel Source | `kernel/oneplus/sm8450` | `asmodeus-oos/android_kernel_oneplus_sm8450` | `17.0` |
+| Kernel Devicetrees | `kernel/oneplus/sm8450-devicetrees` | `asmodeus-oos/android_kernel_oneplus_sm8450-devicetrees` | `17.0` |
+| Kernel Modules | `kernel/oneplus/sm8450-modules` | `asmodeus-oos/android_kernel_oneplus_sm8450-modules` | `17.0` |
+| Display HAL (sm8450) | `hardware/qcom-caf/sm8450/display` | `asmodeus-oos/android_hardware_qcom_display` | `lineage-24.0-caf-sm8450` |
+| Display HAL (sm8450-6.6) | `hardware/qcom-caf/sm8450-6.6/display/hal` | `asmodeus-oos/android_hardware_qcom_display` | `lineage-24.0-caf-sm8450-6.6` |
+| Audio Primary (sm8450) | `hardware/qcom-caf/sm8450/audio/primary-hal` | `asmodeus-oos/android_hardware_qcom_audio-ar` | `lineage-24.0-caf-sm8450` |
+| Audio Primary (sm8450-6.6) | `hardware/qcom-caf/sm8450-6.6/audio/primary-hal` | `asmodeus-oos/android_hardware_qcom_audio-ar` | `lineage-24.0-caf-sm8450-6.6` |
+| Audio AGM (sm8450) | `hardware/qcom-caf/sm8450/audio/agm` | `asmodeus-oos/android_vendor_qcom_opensource_agm` | `lineage-24.0-caf-sm8450` |
+| Audio AGM (sm8450-6.6) | `hardware/qcom-caf/sm8450-6.6/audio/agm` | `asmodeus-oos/android_vendor_qcom_opensource_agm` | `lineage-24.0-caf-sm8450-6.6` |
+| Audio PAL (sm8450) | `hardware/qcom-caf/sm8450/audio/pal` | `asmodeus-oos/android_vendor_qcom_opensource_arpal-lx` | `lineage-24.0-caf-sm8450` |
+| Audio PAL (sm8450-6.6) | `hardware/qcom-caf/sm8450-6.6/audio/pal` | `asmodeus-oos/android_vendor_qcom_opensource_arpal-lx` | `lineage-24.0-caf-sm8450-6.6` |
+| Thermal HAL | `hardware/qcom-caf/thermal` | `asmodeus-oos/android_hardware_qcom_thermal` | `17.0` |
 
-### frameworks/base (3 patches)
-| Patch | Purpose |
-|---|---|
-| `0001` | UDFPS overlay cleanup — prevents SystemUI crashes during lock/unlock transitions |
-| `0002` | Show UDFPS dim layer during AOD — fixes full-screen HBM flash on AOD fingerprint press |
-| `0003` | Near-black dim during AOD UDFPS — uses calibrated alpha for AOD panel luminance |
-
-### hardware/qcom-caf/sm8450/audio/agm + sm8450-6.6/audio/agm (1 patch each)
-| Patch | Purpose |
-|---|---|
-| `0001` | AGM: Support sku-agnostic ACDB ODM path |
-
-### hardware/qcom-caf/sm8450/display (3 patches)
-| Patch | Purpose |
-|---|---|
-| `0001` | SDM: Support Samsung FINGERPRINT_MASK DRM property |
-| `0002` | SDM: Operate FINGERPRINT_MASK for oplus optical UDFPS |
-| `0003` | SDM: Support pixelworks soft iris color calibration |
-
-## Repositories
-
-| Repository | Branch | Host |
-|---|---|---|
-| `device/realme/ferrari` | `lineage-23.3` | GitHub |
-| `device/oneplus/sm8450-common` | `lineage-23.3` | GitHub |
-| `hardware/oplus` | `lineage-23.3` | GitHub |
-| `kernel/oneplus/sm8450` | `lineage-23.3` | GitHub |
-| `kernel/oneplus/sm8450-devicetrees` | `lineage-23.3` | GitHub |
-| `kernel/oneplus/sm8450-modules` | `lineage-23.3` | GitHub |
-| `vendor/realme/ferrari` | `lineage-23.2` | GitLab |
-| `vendor/oneplus/sm8450-common` | `lineage-23.2` | GitLab |
+> Note: Evolution X ROM repositories (`frameworks/base`, `frameworks/av`, `frameworks/native`, `frameworks/libs/systemui`, `packages/apps/Evolver`, `packages/apps/Settings`, `vendor/lineage`, `hardware/lineage/compat`) are tracked directly from upstream and patched via `bash device/realme/ferrari/patches/apply-patches.sh`.
